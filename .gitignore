@@ -5,3 +5,6 @@
 *.out
 *.synctex.gz
 *.toc
+*.synctex(busy)
+*.synctex.gz(busy)
+*.synctex.gz(view)
