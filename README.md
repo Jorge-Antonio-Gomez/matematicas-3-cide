@@ -85,7 +85,7 @@ Este repositorio contiene los apuntes de Álgebra Lineal para la asignatura de *
 
 
 
-## Recursos adicionales.
+## Recursos adicionales
 
 Curso Álgebra Strang 
 
@@ -97,7 +97,7 @@ https://www.youtube.com/watch?v=0Ndnzx6AyaA&list=PLIb_io8a5NB2DddFf-PwvZDCOUNT1G
 
 https://www.youtube.com/watch?v=wiuEEkP_XuM&list=PLIb_io8a5NB2DddFf-PwvZDCOUNT1GZoA&index=2 
 
-Combinaciones lineales, espacio generado y bases. 
+Combinaciones lineales, espacio generado y bases
 
 https://www.youtube.com/watch?v=RqQqFx4xUjk&list=PLIb_io8a5NB2DddFf-PwvZDCOUNT1GZoA&index=3  
 
