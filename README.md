@@ -62,12 +62,12 @@ Este repositorio contiene los apuntes de Álgebra Lineal para la asignatura de *
 
 ## Bibliografía recomendada 
 
-**Texto**:  
+### Texto
 
 - Gilbert Strang.  Linear algebra and its applications. Harcourt Brace Jovanovich, 3ra edición. 
 
 
-**Básica**: 
+### Básica
 
 - Grossman, I. S. Álgebra lineal. Grupo Editorial Iberoamericana., 1998. 
 
@@ -75,7 +75,7 @@ Este repositorio contiene los apuntes de Álgebra Lineal para la asignatura de *
 
 - K. Sydsaeter y P. Hammond, Matemáticas para el análisis Económico, Pearson, Segundo edición, 2012. 
 
-**Complementaria**: 
+### Complementaria
 
 - Chiang, A. C. Métodos fundamentales de Economía Matemática. 3ra Edición. McGraw Hill. 1993. 
 
