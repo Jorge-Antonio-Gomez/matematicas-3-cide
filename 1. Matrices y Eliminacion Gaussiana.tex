@@ -113,7 +113,7 @@ Dónde la gráfica de cada vector es la siguiente:
 
 
 \subsubsection{Variable compleja}
-\label{sec:1_1}
+\label{sec:variable_compleja}
 
 Sea $z$ una variable compleja, la cual está definida como: \begin{align}
     z = a + ib,
@@ -137,6 +137,7 @@ dónde, $a$ y $b$ son números reales y $i^2 = -1$.
 \end{enumerate}
 
 \subsection{Vectores y matrices}
+\label{sec:vectores_y_matrices}
 
 \begin{definition}[Vector renglón]
 {
@@ -226,6 +227,7 @@ dónde, $a$ y $b$ son números reales y $i^2 = -1$.
 \end{teorema}
 
 \subsection{Producto vectorial y producto matricial}
+\label{sec:producto_vectorial_y_producto_matricial}
 
 \begin{align*}
     \text{Sean } a = \begin{pmatrix}
@@ -233,7 +235,7 @@ dónde, $a$ y $b$ son números reales y $i^2 = -1$.
         a_2 \\
         \vdots \\
         a_n
-    \end{pmatrix}$ y $b = \begin{pmatrix}
+    \end{pmatrix} \text{ y } b = \begin{pmatrix}
         b_1 \\
         b_2 \\
         \vdots \\
@@ -241,8 +243,228 @@ dónde, $a$ y $b$ son números reales y $i^2 = -1$.
     \end{pmatrix}
 \end{align*}
 
-\begin{definition}[Producto punto]
+\paragraph*{Producto escalar (producto punto):}
+
+\begin{align*}
+    a \cdot b &= a_1b_1 + a_2b_2 + \cdots + a_nb_n \\
+    &= a^Tb \\
+    &= \begin{pmatrix} \hspace*{0.1cm}\cdot\hspace*{0.1cm} & \hspace*{0.1cm}\cdot\hspace*{0.1cm} & \hspace*{0.1cm}\cdot\hspace*{0.1cm} \end{pmatrix} \times \begin{pmatrix} \hspace*{0.1cm}\cdot\hspace*{0.1cm} \\ \hspace*{0.1cm}\cdot\hspace*{0.1cm} \\ \hspace*{0.1cm}\cdot\hspace*{0.1cm} \end{pmatrix} = \alpha, \quad \alpha \text{ es un escalar}
+\end{align*}
+
+% \begin{definition}[Producto escalar (producto punto)]
+% {
+%     \label{def:1.2.1}
+%     \begin{align*}
+%         a \cdot b &= a_1b_1 + a_2b_2 + \cdots + a_nb_n \\
+%         &= a^Tb \\
+%         &= \begin{pmatrix} \hspace*{0.1cm}\cdot\hspace*{0.1cm} & \hspace*{0.1cm}\cdot\hspace*{0.1cm} & \hspace*{0.1cm}\cdot\hspace*{0.1cm} \end{pmatrix} \times \begin{pmatrix} \hspace*{0.1cm}\cdot\hspace*{0.1cm} \\ \hspace*{0.1cm}\cdot\hspace*{0.1cm} \\ \hspace*{0.1cm}\cdot\hspace*{0.1cm} \end{pmatrix} = \alpha, \quad \alpha \text{ es un escalar}
+%     \end{align*}
+% }
+% \end{definition}
+
+\begin{teorema}
 {
-    aaaaaa
+    \label{thm:2}
+    Sean $a$, $b$ y $c$ vectores de $n$ dimensiones, es decir, $a$, $b$ y $c \in \R^n$ y sean $\alpha$, $\beta \in \R$, entonces: \\
+    \begin{enumerate}
+        \item $a \cdot \vec{0} = 0$
+        \item $a \cdot (b + c) = a \cdot b + a \cdot c$
+        \item $\alpha a \cdot b = \alpha (a \cdot b)$
+    \end{enumerate}
 }
+\end{teorema}
+
+\paragraph*{Producto matricial:}
+
+Sean $A \in \M_{(m \times n)}$ y $B \in \M_{(n \times p)}$ y $C \in \M_{(m \times p)}$:
+\begin{align*}
+    AB = C, \quad \Longleftrightarrow \quad &\left[ a_{ij} \right] \cdot \left[ b_{ij} \right] = \left[ c_{ij} \right] \\
+    &C_{ij} = \left[ A_{i\cdot} \right] \cdot \left[ B_{\cdot j} \right]
+\end{align*}
+
+% \begin{definition}[Producto matricial]
+% {
+%     \label{def:1.2.2}
+%     Sean $A \in \M_{(m \times n)}$ y $B \in \M_{(n \times p)}$ y $C \in \M_{(m \times p)}$:
+%     \begin{align*}
+%         AB = C, \quad \Longleftrightarrow \quad &\left[ a_{ij} \right] \cdot \left[ b_{ij} \right] = \left[ c_{ij} \right] \\
+%         &C_{ij} = \left[ A_{i\cdot} \right] \cdot \left[ B_{\cdot j} \right]
+%     \end{align*}
+% }
+% \end{definition}
+
+\begin{teorema}
+{
+    \label{thm:3}
+    Sean $A \in \M_{(n, m)}$, $B \in \M_{(m, p)}$ y $C \in \M_{(p, q)}$, entonces: \\
+    \begin{align*}
+        A(BC) = (AB)C
+    \end{align*}
+}
+\end{teorema}
+
+\begin{teorema}
+{
+    \label{thm:4}
+    Sean $A \in \M_{(n, m)}$ y $B, C \in \M_{(m, p)}$, entonces: \\
+    \begin{align*}
+        A (B + C) = AB + AC
+    \end{align*}
+}
+\end{teorema}
+
+\begin{teorema}
+{
+    \label{thm:5}
+    Sean $A, B \in \M_{(n, m)}$ y $C \in \M_{(m, p)}$, entonces: \\
+    \begin{align*}
+        (A + B)C = AC + BC
+    \end{align*}
+}
+\end{teorema}
+
+\subsection{Representación matricial de sistemas de ecuaciones lineales}
+\label{sec:representacion_matricial_de_sistemas_de_ecuaciones_lineales}
+
+Sean $A \in \M_{(n, n)}$ y $x, b \in \R^n$:
+
+\begin{align*}
+    Ax = b, \quad \longrightarrow \quad &\begin{cases}
+        \text{\textbf{Sistema no homogéneo}} \\ 
+        \text{Puede o no tener solución}
+    \end{cases} \\
+    Ax = \vec{0}, \quad \longrightarrow \quad &\begin{cases}
+        \text{\textbf{Sistema homogéneo}} \begin{cases}
+            x = \vec{0} \rightarrow \text{Solución trivial} \\
+            \text{Múltiples soluciones}
+        \end{cases}\\
+        \text{Siempre tiene solución}
+    \end{cases}
+\end{align*}
+
+\begin{teorema}
+{
+    \label{thm:6}
+    Sean $x_1$ y $x_2$ soluciones del \textit{sistema no homogeneo}. Entonces su diferencia $x_1 - x_2$ es una solución del \textit{sistema homogéneo} asociado. \\
+
+    \textbf{D!} Sean $x_1, x_2, b \in \R^n$ y $A \in \M_{(n, n)}$, entonces:
+    \begin{align*}
+        Ax_1 &= A(x_1 - x_2) \\
+            &= Ax_1 - Ax_2 \\
+            &= b - b \\
+            &= \vec{0}
+    \end{align*}\qed
+
+    Otra demostración: \\
+
+    \textbf{D!} Sean $x_1, x_2, b \in \R^n$ y $A \in \M_{(n, n)}$, entonces:
+
+    \begin{align*}
+        Ax_1 = b \quad & \quad Ax_2 = b \\ \\
+        Ax_1 &= Ax_2 \\
+        Ax_1 - Ax_2 &= \vec{0} \\
+        A(x_1 - x_2) &= \vec{0} \\
+        Ax &= \vec{0}
+    \end{align*}\qed
+}
+\end{teorema}
+
+\begin{corolario}
+{
+    Si $x$ es una solución del \textit{sistema no homogéneo}, $y$ es otra solución del \textit{sistema no homogéneo}, entonces, existe una solución $h$ al \textit{sistema homogéneo} asociado tal que:
+    \begin{align*}
+        y = x + h
+    \end{align*}
+    \textbf{D!} \begin{align*}
+        h &= y - x \\
+        h &= x \\
+        Ax &= A(y - x) \\
+        &= Ay - Ax \\
+        &= b - b \\
+        &= \vec{0}
+    \end{align*}\qed \\
+
+    \begin{note}
+        [
+            Si el fin es encontrar todas las soluciones del \textit{sistema no homogéneo}, entonces, se puede tomar $x$ como una solución cualquiera y $y$ como la solución del \textit{sistema homogéneo} asociado a $x$.
+        ]
+    \end{note}
+}
+\end{corolario}
+
+\subsection{Matrices inversas}
+\label{sec:matrices_inversas}
+
+Si una matriz $A$ tiene inversa, entonces $A$ es \textbf{invertible} y $A^{-1}$ es la \textbf{matriz inversa} de $A$.
+
+\begin{definition}[Matriz inversa]
+{
+    \label{def:1.2.3}
+    Sean $A \in \M_{(n, n)}$ y $B \in \M_{(n, n)}$:
+    \begin{align*}
+        AB = BA = I_n
+    \end{align*}
+    dónde $B$ es la matriz inversa de $A$ y $I_n$ es la matriz identidad de orden $n$.
+    \begin{align*}
+        AA^{-1} = A^{-1}A = I_n
+    \end{align*}
+}    
 \end{definition}
+
+La pregunta es: ¿$A$ es invertible?
+
+\begin{itemize}
+    \item Si $\text{det}(A) \neq 0$, entonces $A$ es invertible.
+    \item Si $\text{det}(A) = 0$, entonces $A$ no es invertible, es decir, no tiene inversa.
+    \item $\left[ A | I_n \right] \Longrightarrow \left[ I_n | A^{-1} \right]$ \\ $A$ es invertible si es posible llegar a la matriz identidad en la parte izquierda de la matriz aumentada. \\ Si $A$ es una matriz cuadrada de $n \times n$, entonces debe obtener $n$ pivotes en la matriz aumentada. Algo como lo siguiente: \\ \begin{align*}
+        \begin{bmatrix}
+            1 & \xi & \xi & \xi & \cdots & \xi \\
+            0 & 1 & \xi & \xi & \cdots & \xi \\
+            0 & 0 & 1 & \xi & \cdots & \xi \\
+            0 & 0 & 0 & 1 & \cdots & \xi \\
+            \vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & 0 & 0 & \cdots & 1
+        \end{bmatrix}
+    \end{align*}
+    Si hay menos de $n$ pivotes, entonces $A$ no es invertible.
+\end{itemize}
+
+\begin{note}
+[
+    La matriz inversa de la matriz inversa de una matriz $A$ es $A$:
+    \begin{align*}
+        (A^{-1})^{-1} = A
+    \end{align*}
+]
+\end{note}
+
+\begin{teorema}
+{
+    \label{thm:7}
+    Si $A$ es invertible, entonces su matriz inversa $A^{-1}$ es única. \\
+
+    \textbf{D!} Sean $A, B, C \in \M_{(n, n)}$, tales que $B$ y $C$ son matrices inversas de $A$. Entonces:
+    \begin{align*}
+        BA = AB = I_n \quad & \quad \quad CA = AC = I_n \\ \\
+        B &= BI \\
+        &= B(AC) \\
+        &= BA(C) \\
+        &= IC \\
+        &= C \\ \\
+        \therefore \quad B &= C \quad \text{\textbf{\large{!}}}
+    \end{align*}\qed \\
+
+    Esto es una contradicción, ya que $B$ y $C$ son matrices inversas de $A$, que al principio se habían supuesto distintas. Sin embargo, la demostración anterior muestra que son iguales.
+}
+\end{teorema}
+
+\begin{teorema}
+{
+    \label{thm:8}
+    Si $(AB)$ es invertible, entonces $B^{-1}A^{-1}$ es la matriz inversa de $(AB)$.
+    \begin{align*}
+        (AB)(AB)^{-1} &= (AB)^{-1}(AB) = I_n \\
+        ABA^{-1}B^{-1} &= A^{-1}B^{-1}AB = I_n \\
+    \end{align*}
+}
+\end{teorema}

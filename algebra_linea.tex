@@ -20,6 +20,10 @@
 \usepackage{minipage-marginpar}
 \usepackage{tikz}
 \usepackage{fancybox}
+\usepackage{enumitem}
+\usepackage{cancel}
+\usepackage{multirow}
+% \usepackage{mathscr}
 % \usepackage{}
 % \usepackage{tikz-cd}
 % \usepackage{tikz-qtree}
@@ -34,15 +38,23 @@
 % Define a new counter:
 \newcounter{definition}
 \newcounter{teorema}
+\newcounter{corolario}
 
 \setcounter{definition}{0}
 \setcounter{teorema}{0}
+\setcounter{corolario}{0}
 
 % Conjuntos:
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\M}{\mathbb{M}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\HH}{\mathbb{H}}
 
 % To create a fancy notes block with a new command:
 % \newcommand{\note}[1]{\textcolor{red}{\textbf{Nota:} #1}}
@@ -60,6 +72,18 @@
             [c]{0.8\textwidth}
             \begin{center}
                 \text{\textbf{Teorema \arabic{teorema}. \underline{#1}}}
+            \end{center} \vspace*{0.2cm}
+            #2
+        \end{minipage}}}
+    \end{center}
+}
+
+\newenvironment{corolario}[2][]{
+    \begin{center}
+        {\fboxsep=0.4cm \shadowbox{\begin{minipage}[b][1\height]%
+            [c]{0.8\textwidth}
+            \begin{center}
+                \text{\textbf{Corolario \underline{#1}}}
             \end{center} \vspace*{0.2cm}
             #2
         \end{minipage}}}
@@ -108,7 +132,7 @@
 }
 
 % Beautiful page style
-\usepackage[a4paper, margin=2.5cm, left=5cm, right=5cm]{geometry}
+\usepackage[a4paper, margin=2.5cm, left=3.5cm, right=3.5cm]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -201,14 +225,22 @@
 \label{sec:preambulo}
 
 \input{0. Preámbulo}
+\pagebreak
+
+% ####################################################################
 
 \section{Matrices y eliminación gaussiana}
 \label{sec:matrices_y_eliminacion_gaussiana}
 
+\input{1. Matrices y Eliminacion Gaussiana}
+\pagebreak
 
-% \input{1. Matrices y Eliminacion Gaussiana}
+% ####################################################################
 
+\section{Espacios vectoriales y ecuaciones lineales}
+\label{sec:espacios_vectoriales_y_ecuaciones_lineales}
 
-
+\input{2. Espacios Vectoriales}
+\pagebreak
 
 \end{document}
