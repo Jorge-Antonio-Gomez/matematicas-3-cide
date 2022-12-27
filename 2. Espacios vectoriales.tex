@@ -382,13 +382,193 @@ Sean $a, b, c \in \V$ y $\alpha, \beta \in \R$. Los axiomas de un espacio vector
 
 \begin{teorema}
 {
-    Sean $\HH_1$ y $\HH_2$ subespacios vectoriales de $\V$, entonces $\HH_1 \cap \HH_2$ es un subespacio vectorial de $\V$. {\fboxsep=0.2em \fbox{Exte teorema puede estar inluido en el examen}}
-
-    \textbf{D!}
+    Sean $\HH_1$ y $\HH_2$ subespacios vectoriales de $\V$, entonces $\HH_1 \cap \HH_2$ es un subespacio vectorial de $\V$.\\
 
     \begin{enumerate}
         \item \textbf{Asegurarse que no están vacíos.} \\
             Si $\HH_1$ y $\HH_2$ son subespacios vectoriales de $\V$, entonces $\HH_1 \cap \HH_2$ tiene al menos un elemento, pues el cero vectorial pertenece a ambos subespacios. \\
+        \item \textbf{Cerradura bajo la suma.} \\
+            Sean $u, v \in \HH_1 \cap \HH_2$, entonces $u \oplus v \in \HH_1 \cap \HH_2$. \\
+        \item \textbf{Cerradura bajo el producto por un escalar.} \\
+            Sean $u \in \HH_1 \cap \HH_2$ y $\alpha \in \R$, entonces $\alpha \times u \in \HH_1 \cap \HH_2$.
     \end{enumerate}
+
+    \vspace*{1em}
+
+    \begin{center}
+        \textbf{{\fboxsep=0.2em \fbox{Esta es una demostración de examen.}}}
+    \end{center}
 }
 \end{teorema}
+
+\subsection{Combinación lineal}
+
+\begin{center}
+    Suponga $\V = \R^3, \quad x \in \V, \quad x = \begin{pmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{pmatrix}$
+\end{center}
+
+\begin{definition}[Vectores canónicos]
+{
+    Suponga un espacio vectorial $\V = \R^3$. Los vectores canónicos de $\V$ son los siguientes:
+    \begin{align*}
+        \hat{\imath} = \begin{pmatrix}
+            1 \\
+            0 \\
+            0
+        \end{pmatrix}, \quad
+        \hat{\jmath} = \begin{pmatrix}
+            0 \\
+            1 \\
+            0
+        \end{pmatrix}, \quad
+        \hat{k} = \begin{pmatrix}
+            0 \\
+            0 \\
+            1
+        \end{pmatrix}
+    \end{align*}
+}
+\end{definition}
+
+El vector $x$ se puede escribir como una \textbf{combinación lineal} de los vectores canónicos de $\V$ de la siguiente manera:
+\begin{align*}
+    \begin{pmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{pmatrix} = x_1 \begin{pmatrix}
+        1 \\
+        0 \\
+        0
+    \end{pmatrix} + x_2 \begin{pmatrix}
+        0 \\
+        1 \\
+        0
+    \end{pmatrix} + x_3 \begin{pmatrix}
+        0 \\
+        0 \\
+        1
+    \end{pmatrix}
+\end{align*}
+
+\begin{definition}[Combinación lineal]
+{
+    Sean $\V$ un espacio vectorial y $\{ v_1, v_2, \dots, v_n \}$ un conjunto de vectores de $\V$. Un vector $v \in \V$ se dice que es una \textbf{combinación lineal} de los vectores $\{ v_1, v_2, \dots, v_n \}$ si existe un conjunto de escalares $\{ \alpha_1, \alpha_2, \dots, \alpha_n \}$ tales que:
+    \begin{align*}
+        v = \alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_n v_n
+    \end{align*}
+
+    Dicho de otra forma, un vector $v \in \V$ es una combinación lineal de los vectores $\{ v_1, v_2, \dots, v_n \}$ si existe un conjunto de escalares $\{ \alpha_1, \alpha_2, \dots, \alpha_n \}$ tales que se cumple la igualdad anterior.
+}
+\end{definition}
+
+\subsubsection{Ejemplo de una combinación lineal con matrices}
+\label{sec:ejemplo_de_una_combinacion_lineal_con_matrices}
+
+\begin{center}
+    $\V = \M_{(2 \times 3)}$
+\end{center}
+
+Sea $A \in \M_{(2 \times 3)}$ una matriz de $2$ filas y $3$ columnas definida por:
+\begin{align*}
+    A = \begin{bmatrix}
+        -3 & 2 & 8 \\
+        -1 & 9 & 3
+    \end{bmatrix}
+\end{align*}
+
+Una posible combinación lineal es la siguiente:
+\begin{align*}
+    A = \underbrace{\begin{bmatrix}
+        -3 & 2 & 8 \\
+        -1 & 9 & 3
+    \end{bmatrix} = 3 \begin{bmatrix}
+        1 & 0 & 4 \\
+        1 & 1 & 5
+    \end{bmatrix} + 2 \begin{bmatrix}
+        0 & 1 & -2 \\
+        -2 & 3 & -6
+    \end{bmatrix}}_{\substack{\text{Cómo puede ver, cumple la forma} \\ \text{de una combinación lineal ($A = 3A_1 + 2A_2$).}}}
+\end{align*}
+
+Sin embargo, no es la única combinación lineal de $A$, pues también se puede descomponer en los elementos canónicos de $\M_{(2 \times 3)}$ de la siguiente manera:
+\begin{align*}
+    A = -3 \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix} + 2 \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix} + 8 \begin{bmatrix}
+        0 & 0 & 1 \\
+        0 & 0 & 0
+    \end{bmatrix} + -1 \begin{bmatrix}
+        0 & 0 & 0 \\
+        1 & 0 & 0
+    \end{bmatrix} + 9 \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 1 & 0
+    \end{bmatrix} + 3 \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+\end{align*}
+
+\begin{note}
+[
+    Todas las matrices se pueden descomponer como combinaciones lineales de los elementos canónicos.
+]
+\end{note}
+
+\subsubsection{Ejemplo de una combinación lineal con polinomios}
+\label{sec:ejemplo_de_una_combinacion_lineal_con_polinomios}
+
+\begin{center}
+    $\V = \PP_n(x)$
+\end{center}
+
+\begin{note}
+[
+    Recuerde que una combinación lineal es una descomposición lineal de un vector en otros vectores del mismo espacio vectorial.
+]
+\end{note}
+
+Así, tenemos que:
+\begin{align*}
+    \PP_n(x) = a + b x + c x^2 + \dots + z x^n
+\end{align*}
+
+Por lo tanto, el vector canónico es:
+\begin{align*}
+    \hat{\imath} = \left( 1, \ x, \ x^2, \ \dots, \ x^n \right)
+\end{align*}
+
+\subsection{Conjunto generado y espacio generado}
+\label{sec:conjunto_generado_y_espacio_generado}
+
+\begin{definition}[Conjunto generado]
+{
+    Se dice que los vectores $\{ v_1, v_2, \dots, v_n \} \in \V$ \textbf{generan} a $\V$ si $\forall v \in \V \ \exists$ un conjunto de escalares $\{ \alpha_1, \alpha_2, \dots, \alpha_n \} \in \R$ tales que: $v = \alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_n v_n$.
+}   
+\end{definition}
+
+\begin{definition}[Espacio generado]
+{
+    El \textbf{espacio generado} por los vectores $\{ v_1, v_2, \dots, v_k \}$ es el conjunto generado por todas las combinaciones lineales de los vectores $\{ v_1, v_2, \dots, v_k \}$. Es decir,
+    \begin{align*}
+        gen \left\{ v_1, v_2, \dots, v_k \right\} = \left\{ v \in \V \ \middle| \ v = \alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_k v_k \right\} \\
+        \text{donde} \ \alpha_1, \alpha_2, \dots, \alpha_k \in \R
+    \end{align*}
+}
+\end{definition}
+
+\begin{note}
+[
+    \textbf{Combinación lineal:} Descomposición lineal de sumas y productos de escalares con vectores. \\
+    \textbf{Conjunto generado:} Conjunto de vectores tales que existiendo un conjunto de escalares, se puede generar todo el espacio vectorial. \\
+    \textbf{Espacio generado:} Conjunto de vectores generados por un conjunto de vectores. Podría decir: "Con estos vectores no se puede generar todo el espacio vectorial, 
+\end{note}
